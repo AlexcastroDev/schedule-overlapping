@@ -29,7 +29,7 @@ class DistributeDateOverlap {
         let overlapBehind = false
 
         // Representation of behind currentIndex = (indexLimit - 1)
-        for (let i = 0; i < indexLimit - 1; i += 1) {
+        for (let i = 0; i <= indexLimit - 1; i += 1) {
             if(this.checkOverlap(currentRange, this.results[i])) {
                 overlapBehind = true
                 break;
