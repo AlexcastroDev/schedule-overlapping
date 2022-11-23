@@ -4,5 +4,16 @@
   "main": "index.js",
   "repository": "git@github.com:AlexcastroDev/schedule-overlapping.git",
   "author": "Alex Oliveira <alexoliveira7x@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-typescript": "^7.18.6",
+    "jest": "^29.3.1"
+  },
+  "dependencies": {
+    "date-fns": "^2.29.3"
+  }
 }
