@@ -18,33 +18,49 @@ class DistributeDateOverlap {
                 line: 0
             }
         })
-        this.calculationOverlapDates()
+        this.groupEvents()
     }
 
     checkOverlap(currentDate: IDateItem, previousDate: IDateItem) {
         return areIntervalsOverlapping(previousDate as IDateItemInterval, currentDate as IDateItemInterval)
     }
 
-    hasOverlapBehind(indexLimit: number, currentRange: IDateItem) {
-        let overlapBehind = false
-
-        // Representation of behind currentIndex = (indexLimit - 1)
-        for (let i = 0; i <= indexLimit - 1; i += 1) {
-            if(this.checkOverlap(currentRange, this.results[i])) {
-                overlapBehind = true
-                break;
+    private groupEvents() {
+        let events = Array.from(this.results)
+        
+        let stack = [] as any[],  
+        s = 0,
+        lastStartDate, lastEndDate, newEvents;
+        events.sort(function(a,b){
+        if(a.start > b.start) return 1;
+        if(a.start < b.start) return -1;
+        return 0;
+        });
+        while (events.length > 0) {
+        stack[s] = [];
+        newEvents = [];
+        stack[s].push(events[0]);
+        lastStartDate = events[0].start;
+        lastEndDate = events[0].end;
+        for (let i = 1; i < events.length; i++) {
+            if (events[i].end < lastStartDate) {
+            stack[s].push(events[i]);
+            lastStartDate = events[i].start;
+            delete events[i];
+            } else if (events[i].start > lastEndDate) {
+            stack[s].push(events[i]);
+            lastEndDate = events[i].end;      
+            }else{
+            newEvents.push(events[i]);
             }
         }
-
-        return overlapBehind
-    }
-
-    calculationOverlapDates() {
-        this.results.forEach((currentDateItem, currentIndex) => {
-            if(currentIndex > 0 && this.hasOverlapBehind(currentIndex, currentDateItem)) {
-                this.results[currentIndex].line = (this.results[currentIndex].line || 0) + 1
-            }
-        })
+            events = newEvents;
+            s++;
+        }
+        
+        stack = stack.map((item, line) => item.map((currentStackLine: object) => ({ ...currentStackLine, line: line })))
+        
+        this.results = stack.flat()
     }
 
     sortDates(db: IDateItem[]) {
