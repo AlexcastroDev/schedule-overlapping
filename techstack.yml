@@ -2,7 +2,7 @@ repo_name: AlexcastroDev/schedule-overlapping
 report_id: 529478e2eb7769920ff663e9f1ea0fbc
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-02T14:19:31+00:00'
+timestamp: '2024-01-05T08:11:47+00:00'
 requested_by: AlexcastroDev
 provider: github
 branch: main
@@ -16,6 +16,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/AlexcastroDev/schedule-overlapping
   detection_source: Repo Metadata
 - name: JavaScript
   description: Lightweight, interpreted, object-oriented language with first-class
@@ -26,6 +27,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/AlexcastroDev/schedule-overlapping
   detection_source: Repo Metadata
 - name: TypeScript
   description: A superset of JavaScript that compiles to clean JavaScript output
@@ -36,6 +38,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1612/bynNY5dJ.jpg
+  detection_source_url: https://github.com/AlexcastroDev/schedule-overlapping
   detection_source: Repo Metadata
 - name: Babel
   description: Use next generation JavaScript, today.
@@ -59,6 +62,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/AlexcastroDev/schedule-overlapping
   detection_source: Repo Metadata
 - name: Jest
   description: Painless JavaScript Unit Testing
@@ -82,6 +86,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/5848/44mC-kJ3.jpg
+  detection_source_url: https://github.com/AlexcastroDev/schedule-overlapping/blob/main/yarn.lock
   detection_source: yarn.lock
   last_updated_by: Alex Oliveira
   last_updated_on: 2022-11-23 17:31:35.000000000 Z
@@ -93,6 +98,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/AlexcastroDev/schedule-overlapping/blob/main/package.json
   detection_source: package.json
   last_updated_by: Alex Oliveira
   last_updated_on: 2022-11-18 15:33:10.000000000 Z
